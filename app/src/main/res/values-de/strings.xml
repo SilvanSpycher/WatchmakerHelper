@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Watchmaker Helper</string>
+    <string name="toolbar_settings">Einstellungen</string>
+    <string name="field_required">Feld benötigt</string>
+    <string name="invalid_format">Falsche Formatierung</string>
+    <string name="network_error_internal_server_error">Der Server hat ein internes Problem</string>
+    <string name="network_error_no_connection">Verbindung zum Server konnte nicht aufgebaut werden</string>
+    <string name="test_string">Dies ist ein Test</string>
+    <string name="start_cog">Startzahnrad</string>
+    <string name="end_cog">Endzahnrad</string>
+    <string name="error">Fehlerspanne</string>
+    <string name="min_teeth">Maximale Anzahl Zähne</string>
+    <string name="max_teeth">Minimale Anzahl Zähne</string>
+    <string name="max_wheels">Maximale Anzahl Zahnräder</string>
+    <string name="calculate">Berechne</string>
+</resources>
