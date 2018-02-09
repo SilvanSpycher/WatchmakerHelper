@@ -17,9 +17,6 @@ import ch.watchmaker.watchmakerhelper.model.Result;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorInputFragmentPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorInputFragmentPresenterImpl;
 
-/**
- * Created by silva on 07.12.2017.
- */
 
 public class CogwheelCalculatorInputFragment extends BaseFragment implements CogwheelCalculatorInputFragmentPresenter.View {
 

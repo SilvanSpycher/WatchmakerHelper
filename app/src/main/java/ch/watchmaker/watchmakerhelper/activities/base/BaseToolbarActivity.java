@@ -11,9 +11,6 @@ import ch.watchmaker.watchmakerhelper.R;
 import ch.watchmaker.watchmakerhelper.presenters.base.ToolbarPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.base.ToolbarView;
 
-/**
- * Created by silva on 06.02.2018.
- */
 
 public abstract class BaseToolbarActivity extends BaseActivity implements ToolbarView {
 

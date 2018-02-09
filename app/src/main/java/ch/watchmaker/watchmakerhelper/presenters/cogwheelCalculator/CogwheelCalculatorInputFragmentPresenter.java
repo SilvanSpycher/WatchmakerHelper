@@ -4,10 +4,6 @@ import java.util.Queue;
 
 import ch.watchmaker.watchmakerhelper.model.Result;
 
-/**
- * Created by silva on 07.12.2017.
- */
-
 public interface CogwheelCalculatorInputFragmentPresenter {
 
 
@@ -26,9 +22,9 @@ public interface CogwheelCalculatorInputFragmentPresenter {
 
         /**
          * after calculating possible results the view has to change
-         * @param resluts
+         * @param results the found results
          */
-        void changeToResultView(Queue<Result> resluts);
+        void changeToResultView(Queue<Result> results);
 
     }
 }

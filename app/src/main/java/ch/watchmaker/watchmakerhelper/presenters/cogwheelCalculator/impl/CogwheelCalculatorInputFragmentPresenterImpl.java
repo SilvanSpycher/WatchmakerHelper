@@ -12,9 +12,6 @@ import ch.watchmaker.watchmakerhelper.model.Result;
 import ch.watchmaker.watchmakerhelper.model.adapters.Cogwheel;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorInputFragmentPresenter;
 
-/**
- * Created by silva on 07.12.2017.
- */
 
 public class CogwheelCalculatorInputFragmentPresenterImpl implements CogwheelCalculatorInputFragmentPresenter {
 
@@ -172,7 +169,7 @@ public class CogwheelCalculatorInputFragmentPresenterImpl implements CogwheelCal
 
     private List<Integer> primeFactors(int number, int maxteeth) {
         int n = number;
-        List<Integer> factors = new ArrayList<Integer>();
+        List<Integer> factors = new ArrayList<>();
         int divisor = 2;
         while (divisor * divisor <= n && divisor <= maxteeth) {
             if (n % divisor == 0) {
