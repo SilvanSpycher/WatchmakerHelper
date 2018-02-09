@@ -1,15 +1,14 @@
 package ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator;
 
-/**
- * Created by silva on 07.12.2017.
- */
+import java.util.Queue;
+
+import ch.watchmaker.watchmakerhelper.model.Result;
 
 public interface CogwheelCalculatorInputFragmentPresenter {
 
 
     /**
-     * calculate the
-     * @param values
+     * calculate the values
      */
     void calculate(double start, double end, double error, int maxwheels, int minteeth, int maxteeth);
 
@@ -21,7 +20,11 @@ public interface CogwheelCalculatorInputFragmentPresenter {
          */
         void calculatePressed();
 
-
+        /**
+         * after calculating possible results the view has to change
+         * @param results the found results
+         */
+        void changeToResultView(Queue<Result> results);
 
     }
 }

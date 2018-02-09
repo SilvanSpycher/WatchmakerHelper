@@ -10,8 +10,8 @@
     <string name="start_cog">Startzahnrad</string>
     <string name="end_cog">Endzahnrad</string>
     <string name="error">Fehlerspanne</string>
-    <string name="min_teeth">Maximale Anzahl Zähne</string>
-    <string name="max_teeth">Minimale Anzahl Zähne</string>
+    <string name="min_teeth">Minimale Anzahl Zähne</string>
+    <string name="max_teeth">Maximale Anzahl Zähne</string>
     <string name="max_wheels">Maximale Anzahl Zahnräder</string>
     <string name="calculate">Berechne</string>
 </resources>
