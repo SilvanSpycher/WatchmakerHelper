@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Queue;
 
 import butterknife.BindView;
@@ -14,6 +16,7 @@ import butterknife.OnClick;
 import ch.watchmaker.watchmakerhelper.R;
 import ch.watchmaker.watchmakerhelper.fragments.base.BaseFragment;
 import ch.watchmaker.watchmakerhelper.model.Result;
+import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorActivityPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorInputFragmentPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorInputFragmentPresenterImpl;
 
@@ -86,7 +89,10 @@ public class CogwheelCalculatorInputFragment extends BaseFragment implements Cog
     }
 
     @Override
-    public void changeToResultView(Queue<Result> resluts) {
+    public void changeToResultView(Queue<Result> results) {
+        ArrayList resultList = new ArrayList(results);
+        Collections.reverse(resultList);
+        ((CogwheelCalculatorActivityPresenter.View) getActivity()).setResults(resultList);
         changeFragment(CogwheelCalculatorResultFragment.class, true, CogwheelCalculatorResultFragment.TAG);
     }
 }

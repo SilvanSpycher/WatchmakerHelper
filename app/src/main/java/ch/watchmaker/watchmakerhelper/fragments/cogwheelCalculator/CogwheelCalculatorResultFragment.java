@@ -14,12 +14,14 @@ import butterknife.BindView;
 import ch.watchmaker.watchmakerhelper.R;
 import ch.watchmaker.watchmakerhelper.adapters.CogwheelResultAdapter;
 import ch.watchmaker.watchmakerhelper.fragments.base.BaseFragment;
+import ch.watchmaker.watchmakerhelper.model.Result;
 import ch.watchmaker.watchmakerhelper.model.adapters.Cogwheel;
+import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorActivityPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorResultFragmentPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorResultFragmentPresenterImpl;
 
 
-public class CogwheelCalculatorResultFragment extends BaseFragment implements CogwheelCalculatorResultFragmentPresenter.View{
+public class CogwheelCalculatorResultFragment extends BaseFragment implements CogwheelCalculatorResultFragmentPresenter.View, CogwheelResultAdapter.ResultAdapterCallback{
 
     public static final String TAG = CogwheelCalculatorResultFragment.class.getName();
     private CogwheelCalculatorResultFragmentPresenter presenter;
@@ -29,7 +31,7 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
 
 
 
-    @BindView(R.id.fcr_rv_cogwheels)RecyclerView fcr_rv_cogwheels;
+    @BindView(R.id.fcr_rv_results)RecyclerView fcr_rv_results;
 
 
     @Nullable
@@ -37,25 +39,18 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
 
-        Cogwheel cogwheel1 = new Cogwheel(3);
-        Cogwheel cogwheel2 = new Cogwheel(4);
-        Cogwheel cogwheel3 = new Cogwheel(5);
-
-
-        cogwheels.add(cogwheel1);
-        cogwheels.add(cogwheel2);
-        cogwheels.add(cogwheel3);
+        ArrayList<Result> results = ((CogwheelCalculatorActivityPresenter.View) getActivity()).getResults();
 
         if (presenter == null) {
             presenter = new CogwheelCalculatorResultFragmentPresenterImpl(this);
 
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-            adapter = new CogwheelResultAdapter();
+            adapter = new CogwheelResultAdapter(this);
 
-            fcr_rv_cogwheels.setLayoutManager(layoutManager);
-            fcr_rv_cogwheels.setAdapter(adapter);
-            adapter.setData(cogwheels);
+            fcr_rv_results.setLayoutManager(layoutManager);
+            fcr_rv_results.setAdapter(adapter);
+            adapter.setData(results);
 
         }
 
@@ -72,5 +67,12 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
     @Override
     public void displayList(ArrayList<Cogwheel> cogwheels) {
 
+    }
+
+    @Override
+    public void onResultChosen(int selectedResult) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("ResultPosition", selectedResult);
+        changeFragment(CogwheelCalculatorResultDetailFragment.class, true, CogwheelCalculatorResultDetailFragment.TAG, bundle);
     }
 }

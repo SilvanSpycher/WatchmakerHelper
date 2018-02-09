@@ -196,11 +196,4 @@ public class CogwheelCalculatorInputFragmentPresenterImpl implements CogwheelCal
     }
 
 
-    private void save(List<Integer> iPrime, List<Integer> jPrime) {
-        //TODO impl
-
-
-    }
-
-
 }
