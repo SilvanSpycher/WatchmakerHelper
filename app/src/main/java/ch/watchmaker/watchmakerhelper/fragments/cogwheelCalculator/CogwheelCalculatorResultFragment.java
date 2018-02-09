@@ -15,7 +15,6 @@ import ch.watchmaker.watchmakerhelper.R;
 import ch.watchmaker.watchmakerhelper.adapters.CogwheelResultAdapter;
 import ch.watchmaker.watchmakerhelper.fragments.base.BaseFragment;
 import ch.watchmaker.watchmakerhelper.model.Result;
-import ch.watchmaker.watchmakerhelper.model.adapters.Cogwheel;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorActivityPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorResultFragmentPresenter;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorResultFragmentPresenterImpl;
@@ -26,8 +25,6 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
     public static final String TAG = CogwheelCalculatorResultFragment.class.getName();
     private CogwheelCalculatorResultFragmentPresenter presenter;
     private CogwheelResultAdapter adapter;
-
-    private ArrayList<Cogwheel> cogwheels = new ArrayList<>();
 
 
 
@@ -43,17 +40,15 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
 
         if (presenter == null) {
             presenter = new CogwheelCalculatorResultFragmentPresenterImpl(this);
-
-            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-
-            adapter = new CogwheelResultAdapter(this);
-
-            fcr_rv_results.setLayoutManager(layoutManager);
-            fcr_rv_results.setAdapter(adapter);
-            adapter.setData(results);
-
         }
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        adapter = new CogwheelResultAdapter(this);
+
+        fcr_rv_results.setLayoutManager(layoutManager);
+        fcr_rv_results.setAdapter(adapter);
+        adapter.setData(results);
 
         return view;
     }
@@ -61,12 +56,6 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
     @Override
     public int getLayout() {
         return R.layout.fragment_cogwheel_result;
-    }
-
-
-    @Override
-    public void displayList(ArrayList<Cogwheel> cogwheels) {
-
     }
 
     @Override

@@ -15,9 +15,6 @@ import butterknife.ButterKnife;
 import ch.watchmaker.watchmakerhelper.R;
 import ch.watchmaker.watchmakerhelper.model.Result;
 
-/**
- * Created by silva on 05.11.2017.
- */
 
 public class CogwheelResultAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
@@ -76,15 +73,9 @@ public class CogwheelResultAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         @BindView(R.id.cwri_img_nr_of_cogwheels)AppCompatImageView cwri_img_nr_of_cogwheels;
         @BindView(R.id.cwri_layout)ConstraintLayout cwri_layout;
 
-        public ResultsViewHolder(View itemView) {
+        private ResultsViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
     }
 
