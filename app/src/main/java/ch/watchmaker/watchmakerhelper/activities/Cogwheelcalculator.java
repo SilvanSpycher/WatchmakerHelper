@@ -16,7 +16,6 @@ public class Cogwheelcalculator extends BaseToolbarActivity implements CogwheelC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setTitle(R.string.cogwheel_calculator_name);
 
         if (presenter == null) {
             presenter = new CogwheelCalculatorActivityPresenterImpl(this);

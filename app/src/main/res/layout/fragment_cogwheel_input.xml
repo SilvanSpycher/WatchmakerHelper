@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/white">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/fci_cl_startcog"
@@ -32,14 +32,13 @@
 
         <EditText
             android:id="@+id/fci_edt_startcog"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:text="1"
             android:textColor="@color/textColor"
-            android:hint="@string/test_string"
+            android:hint="@string/start_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:gravity="right" />
@@ -70,12 +69,12 @@
 
         <EditText
             android:id="@+id/fci_edt_endcog"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:hint="@string/test_string"
+            android:hint="@string/end_hint"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -107,12 +106,12 @@
 
         <EditText
             android:id="@+id/fci_edt_nrcogs"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:hint="@string/test_string"
+            android:hint="@string/max_wheels_hint"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -144,13 +143,12 @@
 
         <EditText
             android:id="@+id/fci_edt_error"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:text="0.1"
-            android:hint="@string/test_string"
+            android:hint="@string/error_hint"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -182,13 +180,12 @@
 
         <EditText
             android:id="@+id/fci_edt_minteeth"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:text="6"
-            android:hint="@string/test_string"
+            android:hint="@string/min_teeth_hint"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -220,13 +217,12 @@
 
         <EditText
             android:id="@+id/fci_edt_maxteeth"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:inputType="numberDecimal"
-            android:text="120"
-            android:hint="@string/test_string"
+            android:hint="@string/max_teeth_hint"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

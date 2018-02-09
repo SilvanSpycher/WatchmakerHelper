@@ -25,7 +25,7 @@ public abstract class BaseToolbarActivity extends BaseActivity implements Toolba
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //toolbar.setLogo(R.drawable.logo_small);
-        getSupportActionBar().setTitle("Cogwheel calculator");
+        toolbar.setTitle(R.string.cogwheel_calculator_name);
     }
 
     /**
