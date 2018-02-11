@@ -12,43 +12,48 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import ch.watchmaker.watchmakerhelper.R;
-import ch.watchmaker.watchmakerhelper.adapters.CogwheelResultAdapter;
+import ch.watchmaker.watchmakerhelper.adapters.CogwheelResultDetailAdapter;
 import ch.watchmaker.watchmakerhelper.fragments.base.BaseFragment;
 import ch.watchmaker.watchmakerhelper.model.Result;
 import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorActivityPresenter;
-import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorResultFragmentPresenter;
-import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorResultFragmentPresenterImpl;
+import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.CogwheelCalculatorResultDetailFragmentPresenter;
+import ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl.CogwheelCalculatorResultDetailFragmentPresenterImpl;
 
+public class CogwheelCalculatorResultDetailFragment extends BaseFragment implements CogwheelCalculatorResultDetailFragmentPresenter.View {
 
-public class CogwheelCalculatorResultFragment extends BaseFragment implements CogwheelCalculatorResultFragmentPresenter.View, CogwheelResultAdapter.ResultAdapterCallback{
-
-    public static final String TAG = CogwheelCalculatorResultFragment.class.getName();
-    private CogwheelCalculatorResultFragmentPresenter presenter;
-    private CogwheelResultAdapter adapter;
-
-
+    public static final String TAG = CogwheelCalculatorResultDetailFragment.class.getName();
+    private CogwheelCalculatorResultDetailFragmentPresenter presenter;
+    private CogwheelResultDetailAdapter adapter;
+    private int resultPosition;
 
     @BindView(R.id.fcr_rv_results)RecyclerView fcr_rv_results;
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
 
+        if (savedInstanceState != null) {
+            resultPosition = savedInstanceState.getInt("ResultPosition");
+        } else {
+            resultPosition = getArguments().getInt("ResultPosition");
+        }
+
         ArrayList<Result> results = ((CogwheelCalculatorActivityPresenter.View) getActivity()).getResults();
 
         if (presenter == null) {
-            presenter = new CogwheelCalculatorResultFragmentPresenterImpl(this);
+            presenter = new CogwheelCalculatorResultDetailFragmentPresenterImpl(this);
         }
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        adapter = new CogwheelResultAdapter(this);
+        adapter = new CogwheelResultDetailAdapter();
 
         fcr_rv_results.setLayoutManager(layoutManager);
         fcr_rv_results.setAdapter(adapter);
-        adapter.setData(results);
+        adapter.setData(results.get(resultPosition));
+
+
 
         return view;
     }
@@ -56,12 +61,5 @@ public class CogwheelCalculatorResultFragment extends BaseFragment implements Co
     @Override
     public int getLayout() {
         return R.layout.fragment_cogwheel_result;
-    }
-
-    @Override
-    public void onResultChosen(int selectedResult) {
-        Bundle bundle = new Bundle();
-        bundle.putInt("ResultPosition", selectedResult);
-        changeFragment(CogwheelCalculatorResultDetailFragment.class, true, CogwheelCalculatorResultDetailFragment.TAG, bundle);
     }
 }

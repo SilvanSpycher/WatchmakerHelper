@@ -1,7 +1,5 @@
 package ch.watchmaker.watchmakerhelper.presenters.cogwheelCalculator.impl;
 
-import android.util.Log;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,9 +52,6 @@ public class CogwheelCalculatorInputFragmentPresenterImpl implements CogwheelCal
         Queue<Result> resultsQueue = new ArrayDeque<>();
 
         while (i < iterations) {
-            if (i == 531) {
-                Log.d("TEST", "TEST");
-            }
             j = (int) Math.round(i / targetDecimal);
             approxDecimal = (double) i / j;
             if (Math.abs(targetDecimal - approxDecimal) < error) {
@@ -193,13 +188,6 @@ public class CogwheelCalculatorInputFragmentPresenterImpl implements CogwheelCal
         }
 
         return factors;
-    }
-
-
-    private void save(List<Integer> iPrime, List<Integer> jPrime) {
-        //TODO impl
-
-
     }
 
 

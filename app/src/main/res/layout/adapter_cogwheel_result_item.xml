@@ -4,52 +4,57 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/white"
+    android:id="@+id/cwri_layout"
     >
 
-
-    <TextView
-        android:id="@+id/cwri_txt_number_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/test_string"
-        app:layout_constraintBottom_toBottomOf="@id/cwri_img_cogwheel_left"
-        app:layout_constraintEnd_toStartOf="@+id/cwri_img_cogwheel_left"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/cwri_img_cogwheel_left"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="100dp"
+        android:id="@+id/cwri_img_ruler_error"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cogwheel" />
+        app:srcCompat="@drawable/error_symbol" />
 
     <TextView
-        android:id="@+id/cwri_txt_number_right"
+        android:id="@+id/cwri_txt_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/test_string"
-        app:layout_constraintBottom_toBottomOf="@id/cwri_img_cogwheel_right"
-        app:layout_constraintStart_toEndOf="@+id/cwri_img_cogwheel_right"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
-
+        app:layout_constraintBottom_toBottomOf="@id/cwri_img_ruler_error"
+        app:layout_constraintStart_toEndOf="@+id/cwri_img_ruler_error"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/cwri_img_cogwheel_right"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="100dp"
+        android:id="@+id/cwri_img_nr_of_cogwheels"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cwri_txt_nr_of_cogwheels"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cogwheel"
-        android:visibility="invisible"/>
+        app:srcCompat="@drawable/cogwheel_multiple" />
+
+    <TextView
+        android:id="@+id/cwri_txt_nr_of_cogwheels"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/test_string"
+        app:layout_constraintBottom_toBottomOf="@id/cwri_img_nr_of_cogwheels"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
 </android.support.constraint.ConstraintLayout>
