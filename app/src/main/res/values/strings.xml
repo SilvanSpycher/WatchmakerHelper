@@ -13,12 +13,12 @@
     <string name="max_teeth">Max. number of teeth</string>
     <string name="max_wheels">Max. number of cogwheels</string>
     <string name="calculate">Calculate</string>
-    <string name="start_hint">1</string>
-    <string name="end_hint">27.759</string>
-    <string name="error_hint">0.1</string>
-    <string name="min_teeth_hint">6</string>
-    <string name="max_teeth_hint">120</string>
-    <string name="max_wheels_hint">4</string>
+    <string name="start_hint" translatable="false">1</string>
+    <string name="end_hint" translatable="false">365.2422</string>
+    <string name="error_hint" translatable="false">0.1</string>
+    <string name="min_teeth_hint" translatable="false">6</string>
+    <string name="max_teeth_hint" translatable="false">120</string>
+    <string name="max_wheels_hint" translatable="false">4</string>
 
 
 </resources>

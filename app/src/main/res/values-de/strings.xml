@@ -9,4 +9,5 @@
     <string name="max_teeth">Maximale Anzahl Zähne</string>
     <string name="max_wheels">Maximale Anzahl Zahnräder</string>
     <string name="calculate">Berechne</string>
+    <string name="cogwheel_calculator_name">Zahnradberechnung</string>
 </resources>
